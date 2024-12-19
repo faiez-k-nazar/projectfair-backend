@@ -18,7 +18,7 @@ router.post('/api/login',userController.loginAPI)
 
 router.post('/api/addProject',jwtMiddleware,multerMiddleware.single('projectImg'),projectController.addProjectAPI)
 
-router.get('/api/getAllUserProjects',jwtMiddleware,projectController.getAllUserProject)
+router.get('/api/getAllUserProjects',jwtMiddleware,projectController.getAllUserProjects)
 
 router.get('/api/getUserProjects',jwtMiddleware,projectController.getUserProject)
 

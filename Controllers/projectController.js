@@ -57,7 +57,17 @@ exports.getUserProject=async(req,res)=>{
 
 
 //Get All Users PROJECTS
-exports.getAllUserProject=async(req,res)=>{
+exports.getAllUserProjects=async(req,res)=>{
+    const searchKey=req.query.searchKey
+    console.log(searchKey);
+
+    const query={
+        title:{
+            $regex : searchKey,
+            $options:"i"
+        }
+    }
+    
 
         try{
             const response = await projects.find()
